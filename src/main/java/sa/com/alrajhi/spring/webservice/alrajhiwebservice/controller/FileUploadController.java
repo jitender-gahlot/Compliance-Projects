@@ -42,12 +42,12 @@ public class FileUploadController {
 
             Configuration conf = new Configuration();
             conf.set("hadoop.security.authentication", "Kerberos");
-            conf.set("javax.security.auth.useSubjectCredsOnly", "true");
-            conf.set("java.security.krb5.conf", "D:\\Development\\GIT\\Compliance-Projectsin\\resources\\\alrajhi-webservice\\src\\ma\security\\krb5.conf");
-            conf.set("java.security.auth.login.config","D:\\Development\\GIT\\Compliance-Projectsin\\resources\\\alrajhi-webservice\\src\\ma\security\\jaas.conf");
+            //conf.set("javax.security.auth.useSubjectCredsOnly", "true");
+            conf.set("java.security.krb5.conf", "D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\krb5.conf");
+            conf.set("java.security.auth.login.config","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jaas.conf");
 
             UserGroupInformation.setConfiguration(conf);
-            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projectsin\\resources\\\alrajhi-webservice\\src\\ma\security\\jeet.keytab");
+            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jeet.keytab");
 
 //            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","/Development/GIT/Compliance-Projects/src/main/resources/security/jeet.keytab");
 
