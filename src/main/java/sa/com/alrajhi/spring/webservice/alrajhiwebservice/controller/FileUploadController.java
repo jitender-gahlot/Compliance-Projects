@@ -42,15 +42,16 @@ public class FileUploadController {
 
             Configuration conf = new Configuration();
             conf.set("hadoop.security.authentication", "Kerberos");
+            conf.set("javax.security.auth.useSubjectCredsOnly", "true");
+            conf.set("java.security.krb5.conf", "/Development/GIT/Compliance-Projects/src/main/resources/security/krb5.conf");
+            conf.set("java.security.auth.login.config","/Development/GIT/Compliance-Projects/src/main/resources/security/jaas.conf");
 
             UserGroupInformation.setConfiguration(conf);
 //            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jeet.keytab");
 
             UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","/Development/GIT/Compliance-Projects/src/main/resources/security/jeet.keytab");
 
-            System.setProperty("javax.security.auth.useSubjectCredsOnly", "true");
-            System.setProperty("java.security.krb5.conf", "/Users/amarendra/IdeaProjects/spring-boot-impala/src/main/resources/krb5.conf");
-            System.setProperty("java.security.auth.login.config","/Users/amarendra/IdeaProjects/spring-boot-impala/src/main/resources/jaas.conf");
+
 
             
 
