@@ -44,7 +44,9 @@ public class FileUploadController {
             conf.set("hadoop.security.authentication", "Kerberos");
 
             UserGroupInformation.setConfiguration(conf);
-            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jeet.keytab");
+//            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jeet.keytab");
+
+            UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","/Development/GIT/Compliance-Projects/src/main/resources/security/jeet.keytab");
 
             Class.forName("com.cloudera.impala.jdbc41.Driver");
             Connection connection = null;
