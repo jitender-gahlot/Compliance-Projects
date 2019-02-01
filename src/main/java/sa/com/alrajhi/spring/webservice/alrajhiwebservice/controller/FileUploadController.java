@@ -46,6 +46,12 @@ public class FileUploadController {
             UserGroupInformation.setConfiguration(conf);
             UserGroupInformation.loginUserFromKeytab("jeet/quickstart.cloudera@CLOUDERA","D:\\Development\\GIT\\Compliance-Projects\\alrajhi-webservice\\src\\main\\resources\\security\\jeet.keytab");
 
+            System.setProperty("javax.security.auth.useSubjectCredsOnly", "true");
+            System.setProperty("java.security.krb5.conf", "/Users/amarendra/IdeaProjects/spring-boot-impala/src/main/resources/krb5.conf");
+            System.setProperty("java.security.auth.login.config","/Users/amarendra/IdeaProjects/spring-boot-impala/src/main/resources/jaas.conf");
+
+            
+
             Class.forName("com.cloudera.impala.jdbc41.Driver");
             Connection connection = null;
             //Class.forName(DRIVER_CLASS);
