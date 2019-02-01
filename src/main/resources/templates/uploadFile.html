@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js/upload.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link rel="stylesheet" href="css/upload.css">
+    <script src="js/upload.js"></script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link href="css/upload.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Upload Customer ID</title>
 </head>
 <body>
-<div class="drop-zone">
-    <div class="timer-bar">
-        <div class="wrapper">
-            <i class='success-icon ion-ios-checkmark-empty'></i>
-            <p class='success-text'></p>
+<div class="file-upload">
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add File To Upload</button>
+
+    <div class="image-upload-wrap">
+        <form id="uploadform" >
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        </form>
+        <div class="drag-text">
+            <h3>Drag and drop a file or select add File</h3>
         </div>
     </div>
-    <p class="timer-info">Drop your file here</p>
+    <div class="file-upload-content">
+        <img class="file-upload-image" src="#" alt="your Selected File" />
+        <div class="image-title-wrap">
+            <form id="uploadform1" action="#">
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove -  <span class="image-title">Uploaded Image</span></button>
+                <button type="button" onclick="submitUpload()" class="remove-image">Submit File<span class="button-title"></span></button>
+            </form>
+            </div>
+    </div>
 </div>
 </body>
 </html>

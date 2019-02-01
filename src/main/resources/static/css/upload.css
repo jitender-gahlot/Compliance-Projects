@@ -1,152 +1,116 @@
-// helper
-html
-  box-sizing: border-box
-  font-size: 62.5%
+body {
+  font-family: sans-serif;
+  background-color: #eeeeee;
+}
 
-*
-  padding: 0
-  margin: 0
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  box-sizing: inherit
-  &::after, &::before
-    box-sizing: inherit
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-%center
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-=size($w, $h)
-  width: $w
-  height: $h
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
 
-=font-size($sizeValue: 1.6)
-  font-size: ($sizeValue * 10) + px
-  font-size: $sizeValue + rem
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
 
-$text-font: "Titillium Web", Arial, sans-serif
-$white: #ecf0f1
-$green-dark: #24a35a
-$green: #2ecc71
-$green-light: #57d68d
-$black-grey: #555
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
 
-body
-  background-color: $green-dark
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
 
-p
-  font-weight: 600
-  font-family: $text-font
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  color: $white
-  @media screen and (max-width: 599px)
-    +font-size(2)
-  @media screen and (min-width: 600px)
-    +font-size(2.4)
-  @media screen and (min-width: 990px)
-    +font-size(2.7)
-  @media screen and (min-width: 1200px)
-    +font-size(3)
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
 
-.drop-zone
-  transition: height .25s, background-color .6s, border .25s
-  @extend %center
-  border: 3px dashed $white
-  border-radius: 10px
-  background-color: transparent
-  +size(80%, 200px)
-  @media screen and (max-width: 599px)
-    max-width: 200px
-    max-height: 200px
-  @media screen and (min-width: 600px)
-    max-width: 260px
-    max-height: 260px
-  @media screen and (min-width: 990px)
-    max-width: 320px
-    max-height: 320px
-  @media screen and (min-width: 1200px)
-    max-width: 480px
-    max-height: 480px
-  p
-    text-align: center
-    &.timer-info
-      margin-top: 12px
-  [class^="success-"]
-    @extend %center
-    opacity: 0
-    color: $green-dark
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
 
-.timer-bar-wrapper
-  @extend %center
-  border-radius: 4px
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
-  +size(80%, 10px)
-  background-color: $black-grey
-  .timer-bar,
-  .timer-info
-    position: absolute
-    left: 0
-  .timer-bar
-    top: 0
-    +size(0, inherit)
-    background-color: $white
-    border-radius: inherit
-  .timer-info
-    font-weight: 400
-    margin-left: -15px
-  .wrapper
-    overflow: hidden
-    .success-text
-      font-weight: 600
-    @media screen and (max-width: 599px)
-      .success-icon
-        +font-size(18)
-      .success-text
-        display: none !important
-    @media screen and (min-width: 600px)
-      .success-icon
-        top: calc(50% - 20px)
-        +font-size(18)
-      .success-text
-        top: calc(50% + 25px)
-        +font-size(2.2)
-    @media screen and (min-width: 990px)
-      .success-icon
-        top: calc(50% - 25px)
-        +font-size(24)
-      .success-text
-        top: calc(50% + 28px)
-        +font-size(2.8)
-    @media screen and (min-width: 1200px)
-      .success-icon
-        top: calc(50% - 38px)
-        +font-size(30)
-      .success-text
-        top: calc(50% + 42px)
-        +font-size(4.2)
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
 
-.expand
-  transition: height 0.35s 0.25s ease-in, border-radius 0.35s 0.35s ease-out
-  border-radius: 50%
+.drag-text {
+  text-align: center;
+}
 
-.up
-  opacity: 1
-  animation: bounceInUp 0.6s
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
 
-@keyframes bounceInUp
-  from, 60%, 75%, 90%, to
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
-  from
-    transform: translate(-50%, calc(-50% + 100px))
-  35%
-    opacity: 0
-  70%
-    opacity: 1
-    transform: translate(-50%, calc(-50% - 40px))
-  80%
-    transform: translate(-50%, calc(-50% - 35px))
-  to
-    opacity: 1
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
