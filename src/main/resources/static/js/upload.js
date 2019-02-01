@@ -27,8 +27,8 @@ function removeUpload() {
 
 function submitUpload() {
 
-     $('#uploadform').attr('action', '/upload');
-  };
+  $('#uploadform').submit();
+}
 
 $('.image-upload-wrap').bind('dragover', function () {
         $('.image-upload-wrap').addClass('image-dropping');

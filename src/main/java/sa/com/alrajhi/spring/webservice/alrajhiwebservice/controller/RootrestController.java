@@ -1,4 +1,4 @@
-package sa.com.alrajhi.spring.webservice.alrajhiwebservice.resources;
+package sa.com.alrajhi.spring.webservice.alrajhiwebservice.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
