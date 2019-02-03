@@ -1,4 +1,4 @@
-package sa.com.alrajhi.spring.webservice.alrajhiwebservice;
+package sa.com.alrajhi.spring.webservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

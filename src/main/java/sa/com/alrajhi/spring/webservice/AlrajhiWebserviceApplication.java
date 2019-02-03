@@ -1,4 +1,4 @@
-package sa.com.alrajhi.spring.webservice.alrajhiwebservice;
+package sa.com.alrajhi.spring.webservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

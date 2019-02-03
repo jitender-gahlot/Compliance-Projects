@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>ICSR1221_SOA</title>
 </head>
 <body>
+<br/><br/>
+<form action="/soa" method="post">
+    Please Enter CIC Number: <input type="text" name="cic"/>
+    <input type="submit" value="Generate SOA!"/>
+</form>
+<br/>
+<center><b><u>National IDs And It's Relation with Al Rajhi</u></b></center>
+<table border="2">
+<tr>
+    <th>Customer ID</th>
+    <th>Customer CIC</th>
+    <th>Customer Number</th>
+</tr>
+
+    <tr th:each="message : ${list}">
+    <td th:text="${message}">ID</td>
+    <td th:text="${message}">ID</td>
+    <td th:text="${message}">ID</td>
+    <!--<td><a href="#" th:text="${message.title}">Title ...</a></td>-->
+    <!--<td th:text="${message.text}">Text ...</td>-->
+    </tr>
+</table>
 
 </body>
 </html>
