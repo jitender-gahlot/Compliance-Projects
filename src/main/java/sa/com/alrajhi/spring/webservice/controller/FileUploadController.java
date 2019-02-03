@@ -46,9 +46,9 @@ public class FileUploadController {
             Configuration conf = new Configuration();
             System.setProperty("sun.security.krb5.debug", "true");
             System.setProperty("java.security.krb5.conf", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/krb5.conf");
+            //System.setProperty("java.security.auth.login.config", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/jaas.conf");
             System.setProperty("java.security.auth.login.config", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/jaas.conf");
-            System.setProperty("java.security.auth.login.config", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/jaas.conf");
-            System.setProperty("java.security.krb5.conf", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/krb5.conf");
+            //System.setProperty("java.security.krb5.conf", "D:/Development/GIT/Compliance-Projects/alrajhi-webservice/src/main/resources/security/krb5.conf");
             System.setProperty("hadoop.security.authentication", "Kerberos");
             //conf.set("javax.security.auth.useSubjectCredsOnly", "true");
 
